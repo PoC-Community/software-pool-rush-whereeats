@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, unused_field
 
 import "package:flutter/material.dart";
-// import 'AuthPage.dart';
-// import 'registerPage.dart';
+import 'login.dart';
+import 'register.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -37,13 +37,13 @@ class _HomePageState extends State<HomePage> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => AuthPage()),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AuthPage()),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.black,
+                  foregroundColor: Colors.white,
                   backgroundColor: Colors.blue,
                 ),
                 child: Text(
@@ -61,10 +61,10 @@ class _HomePageState extends State<HomePage> {
                 backgroundColor: Colors.white,
               ),
               onPressed: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(builder: (context) => RegisterPage()),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => RegisterPage()),
+                );
               },
               child: Text(
                 "Register",
