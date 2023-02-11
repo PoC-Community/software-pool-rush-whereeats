@@ -1,6 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api, unused_field
 
 import "package:flutter/material.dart";
+import 'package:mobile_app/pages/map.dart';
 import '../components/googleButton.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -105,7 +106,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const RegisterPage()),
+                                builder: (context) => const mapPage()),
                           );
                         }
                       },
