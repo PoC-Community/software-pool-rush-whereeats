@@ -19,7 +19,7 @@ class _mapPageState extends State<mapPage> {
         Expanded(
           child: FlutterMap(
             options: MapOptions(
-              center: LatLng(45.709364, 4.828928),
+              center: LatLng(45.764043, 4.835659),
               zoom: 13,
             ),
             children: [
@@ -37,13 +37,16 @@ class _mapPageState extends State<mapPage> {
         ),
         Container(
           height: 50,
-          color: Colors.grey[200],
+          color: Colors.blue,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: const [
-              Icon(Icons.home),
-              Icon(Icons.location_on),
-              Icon(Icons.person),
+              Icon(Icons.home, color: Colors.white),
+              Icon(
+                Icons.location_on,
+                color: Colors.white,
+              ),
+              Icon(Icons.person, color: Colors.white),
             ],
           ),
         ),
