@@ -1,7 +1,6 @@
 import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
 import express, { Request, Response } from 'express'
-import { StatusCodes } from 'http-status-codes'
 
 import { SERVER_HOST, SERVER_PORT } from './config/config'
 
@@ -14,10 +13,6 @@ app.use(cookieParser())
 
 app.get('/', (req: Request, res: Response) => {
   res.send(`server is running on http://${SERVER_HOST}:${PORT}/`)
-})
-
-app.get('/', (req: Request, res: Response) => {
-  res.status(StatusCodes.OK).send('Home route')
 })
 
 app.listen(PORT, () => {
