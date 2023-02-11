@@ -20,7 +20,7 @@ class SignUpButtonGoogle extends StatelessWidget {
       height: 50.0,
       child: ElevatedButton(
         onPressed: () {
-          print('Continue with Google Button Pressed');
+          // Add Google Sign In
         },
         style: signUpGoogleBtnStyle,
         child: Row(
