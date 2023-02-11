@@ -3,7 +3,7 @@ import cookieParser from 'cookie-parser'
 import express, { Request, Response } from 'express'
 import { StatusCodes } from 'http-status-codes'
 
-import { SERVER_HOST, SERVER_PORT } from './src/config/config'
+import { SERVER_HOST, SERVER_PORT } from './config/config'
 
 const app = express()
 const PORT = SERVER_PORT || 8080
