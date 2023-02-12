@@ -38,6 +38,17 @@ dependencies:
   flutter_icons: ^1.1.0
   fluttericon: ^2.0.0
 
+  animated_theme_switcher: ^2.0.1-nullsafety.0
+
+  # persist locally data
+  shared_preferences: ^2.0.5
+
+  # pick image
+  image_picker: ^0.7.5
+
+  # store image
+  path_provider: ^2.0.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -48,6 +59,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
