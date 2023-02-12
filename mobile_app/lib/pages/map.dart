@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:mobile_app/pages/profile.dart';
 
 class mapPage extends StatefulWidget {
   const mapPage({super.key});
@@ -77,7 +78,11 @@ class _mapPageState extends State<mapPage> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  // to do
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ProfilePage()),
+                  );
                 },
                 child: const Icon(
                   Icons.person,
