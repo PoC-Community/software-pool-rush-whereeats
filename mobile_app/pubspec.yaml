@@ -37,9 +37,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_icons: ^1.1.0
   fluttericon: ^2.0.0
-
-  animated_theme_switcher: ^2.0.1-nullsafety.0
-
   # persist locally data
   shared_preferences: ^2.0.5
 

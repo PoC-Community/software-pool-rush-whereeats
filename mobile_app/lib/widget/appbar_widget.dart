@@ -1,7 +1,5 @@
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_app/themes.dart';
 import 'package:mobile_app/utils/user_preferences.dart';
 
 AppBar buildAppBar(BuildContext context) {
@@ -14,19 +12,12 @@ AppBar buildAppBar(BuildContext context) {
     backgroundColor: Colors.transparent,
     elevation: 0,
     actions: [
-      ThemeSwitcher(
-        builder: (context) => IconButton(
-          icon: Icon(icon),
-          onPressed: () {
-            final theme = isDarkMode ? MyThemes.lightTheme : MyThemes.darkTheme;
-
-            final switcher = ThemeSwitcher.of(context);
-            switcher.changeTheme(theme: theme);
-
-            final newUser = user.copy(isDarkMode: !isDarkMode);
-            UserPreferences.setUser(newUser);
-          },
-        ),
+      IconButton(
+        icon: Icon(icon),
+        onPressed: () {
+          final newUser = user.copy(isDarkMode: !isDarkMode);
+          UserPreferences.setUser(newUser);
+        },
       ),
     ],
   );
