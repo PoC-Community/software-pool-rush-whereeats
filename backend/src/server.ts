@@ -30,7 +30,7 @@ app.get('/store', async (req, res) => {
     })
     res.json(stores)
   } catch (error) {
-    res.send(400).send('Bad Request')
+    res.status(400).send('Bad Request')
   }
 })
 
@@ -55,6 +55,7 @@ app.post('/store', async (req, res) => {
         category: req.body.category,
         openingHours: req.body.openingHours,
         averagePrice: req.body.averagePrice,
+        createdAt: req.body.createdAt,
       },
     })
     res.json(newStore)
