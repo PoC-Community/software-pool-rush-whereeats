@@ -75,14 +75,14 @@ class _AuthPageState extends State<AuthPage> {
                     Container(
                       child: ElevatedButton(
                         onPressed: () {
-                          // if (_formKey.currentState!.validate()) {
-                          //   _formKey.currentState!.save();
-                          //   // do something
-                          // }
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => mapPage()),
-                          );
+                          if (_formKey.currentState!.validate()) {
+                            _formKey.currentState!.save();
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => mapPage()),
+                            );
+                          }
                         },
                         style: ElevatedButton.styleFrom(
                           foregroundColor: Colors.white,

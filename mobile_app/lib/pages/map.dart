@@ -6,7 +6,6 @@ import 'package:latlong2/latlong.dart';
 
 class mapPage extends StatefulWidget {
   const mapPage({super.key});
-
   @override
   State<mapPage> createState() => _mapPageState();
 }
@@ -14,8 +13,21 @@ class mapPage extends StatefulWidget {
 class _mapPageState extends State<mapPage> {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Scaffold(
+        body: Column(
       children: [
+        const SizedBox(height: 50),
+        Container(
+          height: 50,
+          color: Colors.grey[200],
+          child: const TextField(
+            decoration: InputDecoration(
+              fillColor: Colors.white,
+              contentPadding: EdgeInsets.symmetric(horizontal: 20),
+              hintText: "Search",
+            ),
+          ),
+        ),
         Expanded(
           child: FlutterMap(
             options: MapOptions(
@@ -35,22 +47,47 @@ class _mapPageState extends State<mapPage> {
             ],
           ),
         ),
+        //
         Container(
           height: 50,
           color: Colors.blue,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const [
-              Icon(Icons.home, color: Colors.white),
-              Icon(
-                Icons.location_on,
-                color: Colors.white,
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  // to do
+                },
+                child: const Icon(
+                  Icons.star,
+                  color: Colors.white,
+                ),
               ),
-              Icon(Icons.person, color: Colors.white),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const mapPage()),
+                  );
+                },
+                child: const Icon(
+                  Icons.location_on,
+                  color: Color.fromARGB(255, 214, 208, 208),
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  // to do
+                },
+                child: const Icon(
+                  Icons.person,
+                  color: Colors.white,
+                ),
+              ),
             ],
           ),
         ),
       ],
-    );
+    ));
   }
 }
