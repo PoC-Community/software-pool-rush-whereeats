@@ -1,0 +1,22 @@
+parser: "@typescript-eslint/parser"
+
+parserOptions:
+  ecmaVersion: latest
+  project: tsconfig.json
+
+env:
+  node: true
+  browser: true
+
+extends:
+  - airbnb-typescript
+  - airbnb/hooks
+  - plugin:@typescript-eslint/recommended
+  - plugin:prettier/recommended
+
+rules:
+  prettier/prettier: warn
+  no-console: off
+  react/jsx-filename-extension: off
+  import/extensions: off
+  import/no-extraneous-dependencies: off
