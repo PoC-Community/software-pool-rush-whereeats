@@ -3,10 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:mobile_app/pages/profile.dart';
 
 class mapPage extends StatefulWidget {
   const mapPage({super.key});
-
   @override
   State<mapPage> createState() => _mapPageState();
 }
@@ -14,12 +14,25 @@ class mapPage extends StatefulWidget {
 class _mapPageState extends State<mapPage> {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Scaffold(
+        body: Column(
       children: [
+        const SizedBox(height: 50),
+        Container(
+          height: 50,
+          color: Colors.grey[200],
+          child: const TextField(
+            decoration: InputDecoration(
+              fillColor: Colors.white,
+              contentPadding: EdgeInsets.symmetric(horizontal: 20),
+              hintText: "Search",
+            ),
+          ),
+        ),
         Expanded(
           child: FlutterMap(
             options: MapOptions(
-              center: LatLng(45.709364, 4.828928),
+              center: LatLng(45.764043, 4.835659),
               zoom: 13,
             ),
             children: [
@@ -35,19 +48,51 @@ class _mapPageState extends State<mapPage> {
             ],
           ),
         ),
+        //
         Container(
           height: 50,
-          color: Colors.grey[200],
+          color: Colors.blue,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const [
-              Icon(Icons.home),
-              Icon(Icons.location_on),
-              Icon(Icons.person),
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  // to do
+                },
+                child: const Icon(
+                  Icons.star,
+                  color: Colors.white,
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const mapPage()),
+                  );
+                },
+                child: const Icon(
+                  Icons.location_on,
+                  color: Color.fromARGB(255, 214, 208, 208),
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ProfilePage()),
+                  );
+                },
+                child: const Icon(
+                  Icons.person,
+                  color: Colors.white,
+                ),
+              ),
             ],
           ),
         ),
       ],
-    );
+    ));
   }
 }
