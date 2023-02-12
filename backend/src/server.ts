@@ -1,10 +1,10 @@
 import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
 import express, { Request, Response } from 'express'
-import { StatusCodes } from 'http-status-codes'
 
 import { PrismaClient } from '@prisma/client'
 import { SERVER_HOST, SERVER_PORT } from './config/config'
+import { StatusCodes } from 'http-status-codes'
 
 const prisma = new PrismaClient()
 

@@ -25,11 +25,19 @@ model Store {
   id String @id @default(uuid())
   storeName String
   openingHours String
-  localisation String
+  localisation FoodCategory
   category String
   //images String[]
   averagePrice Int
   //menu String[]
   createdAt DateTime @default(now())
   //owner User @relation(fields: [id], references: [id])
+}
+
+enum FoodCategory {
+  BURGER
+  TACOS
+  PIZZA
+  SUSHI
+  CHINESE
 }
